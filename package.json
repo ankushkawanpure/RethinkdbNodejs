@@ -1,0 +1,23 @@
+{
+  "name": "rethinkdbnodejs",
+  "version": "1.0.0",
+  "description": "RethinkDB node js interaction",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankushkawanpure/noderethinkdb.git"
+  },
+  "keywords": [
+    "user",
+    "email"
+  ],
+  "author": "Ankush Kawanpure",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ankushkawanpure/noderethinkdb/issues"
+  },
+  "homepage": "https://github.com/ankushkawanpure/noderethinkdb#readme"
+}
