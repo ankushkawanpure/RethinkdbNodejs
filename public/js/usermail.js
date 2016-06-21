@@ -17,11 +17,4 @@ function printTerms(terms) {
         $('<dt>').text(this.user).appendTo('body>dl');
         $('<dd>').text(this.email).appendTo('body>dl');
     });
-    $('dt').off('dblclick').dblclick(function() {
-        $.ajax({
-            url: '/usermail-api/' + $(this).text(),
-            type: 'DELETE',
-            success: printTerms
-        });
-    });
 }
