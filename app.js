@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(express.static("./public"));
 
 app.route('/usermail-api')
-    .get(listTodoItems)
-    .post(createTodoItem);
+    .get(listUsersfromDB)
+    .post(addUsertoDB);
 
 app.delete("/usersearch-api/:id", function (req, res) {
     var userID = req.params.id;
@@ -47,7 +47,7 @@ function startExpress(connection) {
     console.log('Listening on port ' + config.express.port);
 }
 
-function createTodoItem(req, res, next) {
+function addUsertoDB(req, res, next) {
     var user = req.body;
     user.createdAt = r.now();
     console.dir(user);
@@ -58,11 +58,11 @@ function createTodoItem(req, res, next) {
         }
 
         //res.json(result.changes[0].new_val);
-        listTodoItems(req, res, next);
+        listUsersfromDB(req, res, next);
     });
 }
 
-function listTodoItems(req, res, next) {
+function listUsersfromDB(req, res, next) {
     r.table('userinfo').orderBy({index: 'createdAt'}).run(req.app._rdbConn, function(err, cursor) {
         if(err) {
             return next(err);
