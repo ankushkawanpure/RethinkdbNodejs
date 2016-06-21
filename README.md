@@ -29,8 +29,8 @@ node app.js
 ```
 
 ### Web Pages
-* Add User to database:  http://localhost:3000/index.html
-* Search user:  http://localhost:3000/search.html
+* Add User to database: http://localhost:3000/index.html
+* Search user: http://localhost:3000/search.html
 
 
 
