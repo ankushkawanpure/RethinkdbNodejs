@@ -21,11 +21,6 @@ app.route('/usermail-api')
     .get(listTodoItems)
     .post(createTodoItem);
 
-app.route('/usermail-api/:id')
-    .get(getTodoItem)
-    .put(updateTodoItem)
-    .delete(deleteTodoItem);
-
 app.delete("/usersearch-api/:id", function (req, res) {
     var userID = req.params.id;
     console.log(userID);
@@ -41,8 +36,6 @@ app.delete("/usersearch-api/:id", function (req, res) {
             console.log("result to push" + jresult);
             res.json(jresult);
         });
-
-
 
     });
 });
@@ -83,48 +76,6 @@ function listTodoItems(req, res, next) {
 
             res.json(result);
         });
-    });
-}
-
-function updateTodoItem(req, res, next) {
-    var todoItem = req.body;
-    var todoItemID = req.params.id;
-
-    r.table('userinfo').get(todoItemID).update(todoItem, {returnChanges: true}).run(req.app._rdbConn, function(err, result) {
-        if(err) {
-            return next(err);
-        }
-
-        res.json(result.changes[0].new_val);
-    });
-}
-
-
-function deleteTodoItem(req, res, next) {
-    var todoItemID = req.params.id;
-
-    r.table('userinfo').get(todoItemID).delete().run(req.app._rdbConn, function(err, result) {
-        if(err) {
-            return next(err);
-        }
-
-        console.log(result);
-        res.json({success: true});
-    });
-}
-
-
-function getTodoItem(req, res, next) {
-    var userID = req.params.id;
-
-    // r.table('userinfo').get(userID).run(req.app._rdbConn, function(err, result) {
-    r.table("userinfo").filter(r.row["email"] == userID).run(req.app._rdbConn, function(err, result){
-
-        if(err) {
-            return next(err);
-        }
-        console.log(result)
-        res.json(result);
     });
 }
 

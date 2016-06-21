@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ankushkawanpure/noderethinkdb.git"
+    "url": "git+https://github.com/ankushkawanpure/RethinkdbNodejs.git"
   },
   "keywords": [
     "user",
@@ -17,7 +17,7 @@
   "author": "Ankush Kawanpure",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ankushkawanpure/noderethinkdb/issues"
+    "url": "https://github.com/ankushkawanpure/RethinkdbNodejs/issues"
   },
-  "homepage": "https://github.com/ankushkawanpure/noderethinkdb#readme"
+  "homepage": "https://github.com/ankushkawanpure/RethinkdbNodejs#readme"
 }
